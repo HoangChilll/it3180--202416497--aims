@@ -8,6 +8,9 @@
 - Sort cart DVDs by title or cost.
 - Search DVDs by category.
 
+### Fixed
+- Tìm kiếm tên DVD không phân biệt chữ hoa và chữ thường (#20).
+
 ## [1.0.0] - 2026-11-07
 
 ### Added
