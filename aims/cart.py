@@ -29,3 +29,9 @@ class Cart:
             return
         for index, dvd in enumerate(self.items, start=1):
             print(f"{index}. {dvd.title}: {dvd.price:.2f} $")
+
+    def sort_by_title(self):
+        self.items.sort(key=lambda dvd: dvd.title.casefold())
+
+    def sort_by_cost(self):
+        self.items.sort(key=lambda dvd: dvd.price)
