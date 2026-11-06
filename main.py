@@ -8,6 +8,7 @@ def main():
     cart.add_dvd(DVD("Star Wars", 24.99))
     cart.add_dvd(DVD("Aladdin", 18.91))
     print(f"Total cost: {cart.total_cost():.2f} $")
+    cart.print_cart()
 
 
 if __name__ == "__main__":
