@@ -1,9 +1,11 @@
 from aims.cart import Cart
 from aims.dvd import DVD
 from aims.search import search_by_title
+from aims import __version__
 
 
 def main():
+    print(f"AIMS-mini v{__version__}")
     cart = Cart()
     cart.add_dvd(DVD("The Lion King", 19.99))
     cart.add_dvd(DVD("Star Wars", 24.99))
