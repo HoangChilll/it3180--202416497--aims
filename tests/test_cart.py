@@ -25,3 +25,12 @@ class CartTests(unittest.TestCase):
         with redirect_stdout(output):
             Cart().print_cart()
         self.assertEqual("The cart is empty\n", output.getvalue())
+
+    def test_discounted_total(self):
+        cart = Cart()
+        cart.add_dvd(DVD("A", 100))
+        self.assertEqual(80, cart.total_cost_with_discount(20))
+
+    def test_invalid_discount(self):
+        with self.assertRaises(ValueError):
+            Cart().total_cost_with_discount(150)
