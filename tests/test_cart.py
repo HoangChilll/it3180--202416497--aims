@@ -26,6 +26,15 @@ class CartTests(unittest.TestCase):
             Cart().print_cart()
         self.assertEqual("The cart is empty\n", output.getvalue())
 
+    def test_add_dvd_on_legacy_console(self):
+        cart = Cart()
+        output = io.BytesIO()
+        console = io.TextIOWrapper(output, encoding="cp1252")
+        with redirect_stdout(console):
+            self.assertTrue(cart.add_dvd(DVD("A", 1)))
+        console.flush()
+        self.assertIn(b"DVD added to cart", output.getvalue())
+
     def test_discounted_total(self):
         cart = Cart()
         cart.add_dvd(DVD("A", 100))

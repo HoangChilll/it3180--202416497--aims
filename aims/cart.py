@@ -9,7 +9,10 @@ class Cart:
         if len(self.items) >= MAX_NUMBERS_ORDERED:
             return False
         self.items.append(dvd)
-        print("Đã thêm đĩa vào giỏ hàng")
+        try:
+            print("Đã thêm đĩa vào giỏ hàng")
+        except UnicodeEncodeError:
+            print("DVD added to cart")
         return True
 
     def total_cost(self):
